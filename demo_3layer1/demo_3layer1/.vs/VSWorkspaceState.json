@@ -1,12 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\App_Start",
-    "\\Business",
-    "\\DataAccess",
-    "\\Models",
-    "\\UI"
+    "\\UI",
+    "\\UI\\Home",
+    "\\UI\\Login"
   ],
-  "SelectedNode": "\\Web.Release.config",
+  "SelectedNode": "\\UI\\Login\\Login.aspx",
   "PreviewInSolutionExplorer": false
 }

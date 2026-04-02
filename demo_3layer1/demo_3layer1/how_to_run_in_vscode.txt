@@ -1,0 +1,40 @@
+HOW TO RUN (VS CODE / POWERSHELL)
+
+1) Go to workspace root:
+Set-Location "C:\Users\Admin\Downloads\demo_3layer1\demo_3layer1"
+
+2) Build split solution (backend + frontend):
+& "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe" ".\demo_3layer1_split.sln" /t:Build /p:Configuration=Debug /m
+
+3) Optional: stop old IIS Express processes:
+Stop-Process -Name iisexpress -Force -ErrorAction SilentlyContinue
+
+4) Start BACKEND site (Admin/Teacher) in background:
+Start-Process -FilePath "C:\Program Files\IIS Express\iisexpress.exe" -ArgumentList '/path:"C:\Users\Admin\Downloads\demo_3layer1\demo_3layer1\demo_3layer1_backend" /port:18081'
+
+5) Start FRONTEND site (Student) in background:
+Start-Process -FilePath "C:\Program Files\IIS Express\iisexpress.exe" -ArgumentList '/path:"C:\Users\Admin\Downloads\demo_3layer1\demo_3layer1\demo_3layer1_frontend" /port:18082'
+
+6) Open URLs:
+Backend Login:  http://localhost:18081/UI/Login/Login
+Frontend Login: http://localhost:18082/UI/Login/Login
+
+7) Quick health check:
+Invoke-WebRequest "http://localhost:18081/UI/Login/Login" | Select-Object StatusCode
+Invoke-WebRequest "http://localhost:18082/UI/Login/Login" | Select-Object StatusCode
+
+8) Stop all IIS Express:
+Stop-Process -Name iisexpress -Force
+
+--------------------------------------------------
+LEGACY SINGLE PROJECT (if needed)
+--------------------------------------------------
+
+Start:
+& "C:\Program Files\IIS Express\iisexpress.exe" /path:"C:\Users\Admin\Downloads\demo_3layer1\demo_3layer1\demo_3layer1" /port:44384
+
+Open:
+http://localhost:44384/UI/Home/Home
+
+Stop:
+Press Q in IIS window OR Ctrl + C

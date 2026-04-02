@@ -11,27 +11,28 @@ namespace demo_3layer1
 
         protected void btnAdmin_Click(object sender, EventArgs e)
         {
-            Session["Role"] = "Admin";
+            Session["SelectedRole"] = "Admin";
             Session["CameFromHome"] = true;
             Response.Redirect("~/UI/Login/Login.aspx");
         }
 
         protected void btnTeacher_Click(object sender, EventArgs e)
         {
-            Session["Role"] = "Teacher";
+            Session["SelectedRole"] = "Teacher";
             Session["CameFromHome"] = true;
             Response.Redirect("~/UI/Login/Login.aspx");
         }
 
         protected void btnStudent_Click(object sender, EventArgs e)
         {
-            Session["Role"] = "Student";
+            Session["SelectedRole"] = "Student";
             Session["CameFromHome"] = true;
             Response.Redirect("~/UI/Login/Login.aspx");
         }
         protected void btnLoginNow_Click(object sender, EventArgs e)
         {
             // Chuyển hướng sang trang đăng nhập
+            Session["CameFromHome"] = true;
             Response.Redirect("~/UI/Login/Login.aspx");
         }
     }
