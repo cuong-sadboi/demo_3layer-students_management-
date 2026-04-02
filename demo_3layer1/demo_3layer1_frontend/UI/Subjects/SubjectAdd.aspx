@@ -17,7 +17,7 @@
             <div class="portal-topbar">
                 <div>
                     <h1 class="portal-title">Add New Subject</h1>
-                    <p class="portal-subtitle">Them mon hoc moi vao he thong voi ten mon va so tin chi phu hop.</p>
+                    <p class="portal-subtitle">Thêm môn học mới vào hệ thống với tên môn và số tín chỉ phù hợp.</p>
                 </div>
                 <span class="portal-badge">Create</span>
             </div>
@@ -25,24 +25,31 @@
             <div class="portal-form-card">
                 <div class="portal-row">
                     <div>
-                        <label class="portal-label" for="<%= txtName.ClientID %>">Ten mon hoc</label>
-                        <asp:TextBox ID="txtName" runat="server" CssClass="portal-input" Placeholder="Nhap ten mon hoc"></asp:TextBox>
+                        <label class="portal-label" for="<%= txtName.ClientID %>">Tên môn học</label>
+                        <asp:TextBox ID="txtName" runat="server" CssClass="portal-input" Placeholder="Nhập tên môn học"></asp:TextBox>
                     </div>
 
                     <div>
                         <label class="portal-label" for="<%= txtCredit.ClientID %>">So tin chi</label>
-                        <asp:TextBox ID="txtCredit" runat="server" CssClass="portal-input" TextMode="Number" Placeholder="Nhap so tin chi"></asp:TextBox>
+                        <asp:TextBox ID="txtCredit" runat="server" CssClass="portal-input" TextMode="Number" Placeholder="Nhập số tín chỉ"></asp:TextBox>
                     </div>
                 </div>
 
                 <asp:Label ID="lblMessage" runat="server" CssClass="portal-message"></asp:Label>
 
                 <div class="portal-footer-actions">
-                    <asp:Button ID="btnSave" runat="server" Text="Luu mon hoc" CssClass="portal-btn success" OnClick="btnSave_Click" />
-                    <asp:Button ID="btnBack" runat="server" Text="Quay lai" CssClass="portal-btn secondary" OnClick="btnBack_Click" />
+                    <asp:Button ID="btnSave" runat="server" Text="Lưu môn học" CssClass="portal-btn success" OnClick="btnSave_Click" />
+                    <asp:Button ID="btnBack" runat="server" Text="Quay lại" CssClass="portal-btn secondary" OnClick="btnBack_Click" />
                 </div>
             </div>
         </div>
     </form>
 </body>
 </html>
+
+
+
+
+
+
+

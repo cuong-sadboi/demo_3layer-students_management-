@@ -17,7 +17,7 @@
             <div class="portal-topbar">
                 <div>
                     <h1 class="portal-title">Edit Student</h1>
-                    <p class="portal-subtitle">Cap nhat thong tin ho so sinh vien va luu lai thay doi.</p>
+                    <p class="portal-subtitle">Cập nhật thông tin hồ sơ sinh viên và lưu lại thay đổi.</p>
                 </div>
                 <span class="portal-badge">Update</span>
             </div>
@@ -27,12 +27,12 @@
 
                 <div class="portal-row">
                     <div>
-                        <label class="portal-label" for="<%= txtName.ClientID %>">Ten sinh vien</label>
+                        <label class="portal-label" for="<%= txtName.ClientID %>">Tên sinh viên</label>
                         <asp:TextBox ID="txtName" runat="server" CssClass="portal-input"></asp:TextBox>
                     </div>
 
                     <div>
-                        <label class="portal-label" for="<%= txtClass.ClientID %>">Lop hoc</label>
+                        <label class="portal-label" for="<%= txtClass.ClientID %>">Lớp học</label>
                         <asp:TextBox ID="txtClass" runat="server" CssClass="portal-input"></asp:TextBox>
                     </div>
 
@@ -45,11 +45,19 @@
                 <asp:Label ID="lblMessage" runat="server" CssClass="portal-message"></asp:Label>
 
                 <div class="portal-footer-actions">
-                    <asp:Button ID="btnUpdate" runat="server" Text="Cap nhat" CssClass="portal-btn primary" OnClick="btnUpdate_Click" />
-                    <asp:Button ID="btnBack" runat="server" Text="Quay lai" CssClass="portal-btn secondary" OnClick="btnBack_Click" />
+                    <asp:Button ID="btnUpdate" runat="server" Text="Cập nhật" CssClass="portal-btn primary" OnClick="btnUpdate_Click" />
+                    <asp:Button ID="btnBack" runat="server" Text="Quay lại" CssClass="portal-btn secondary" OnClick="btnBack_Click" />
                 </div>
             </div>
         </div>
     </form>
 </body>
 </html>
+
+
+
+
+
+
+
+

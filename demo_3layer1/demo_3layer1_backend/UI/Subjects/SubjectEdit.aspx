@@ -17,7 +17,7 @@
             <div class="portal-topbar">
                 <div>
                     <h1 class="portal-title">Edit Subject</h1>
-                    <p class="portal-subtitle">Dieu chinh thong tin mon hoc va cap nhat lai so tin chi neu can.</p>
+                    <p class="portal-subtitle">Điều chỉnh thông tin môn học và cập nhật lai số tín chỉ nếu cần.</p>
                 </div>
                 <span class="portal-badge">Update</span>
             </div>
@@ -27,7 +27,7 @@
 
                 <div class="portal-row">
                     <div>
-                        <label class="portal-label" for="<%= txtName.ClientID %>">Ten mon hoc</label>
+                        <label class="portal-label" for="<%= txtName.ClientID %>">Tên môn học</label>
                         <asp:TextBox ID="txtName" runat="server" CssClass="portal-input"></asp:TextBox>
                     </div>
 
@@ -40,11 +40,20 @@
                 <asp:Label ID="lblMessage" runat="server" CssClass="portal-message"></asp:Label>
 
                 <div class="portal-footer-actions">
-                    <asp:Button ID="btnUpdate" runat="server" Text="Cap nhat" CssClass="portal-btn primary" OnClick="btnUpdate_Click" />
-                    <asp:Button ID="btnBack" runat="server" Text="Quay lai" CssClass="portal-btn secondary" OnClick="btnBack_Click" />
+                    <asp:Button ID="btnUpdate" runat="server" Text="Cập nhật" CssClass="portal-btn primary" OnClick="btnUpdate_Click" />
+                    <asp:Button ID="btnBack" runat="server" Text="Quay lại" CssClass="portal-btn secondary" OnClick="btnBack_Click" />
                 </div>
             </div>
         </div>
     </form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

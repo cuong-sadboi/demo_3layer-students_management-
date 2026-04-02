@@ -17,7 +17,7 @@
             <div class="portal-topbar">
                 <div>
                     <h1 class="portal-title">Student Management</h1>
-                    <p class="portal-subtitle">Tim kiem, cap nhat va xoa thong tin sinh vien mot cach nhanh gon va nhat quan.</p>
+                    <p class="portal-subtitle">Tìm kiếm, cập nhật và xoa thông tin sinh viên mot cach nhanh gọn và nhất quán.</p>
                 </div>
                 <span class="portal-badge">CRUD</span>
             </div>
@@ -25,14 +25,14 @@
             <div class="portal-toolbar">
                 <div class="portal-row cols-3">
                     <div>
-                        <label class="portal-label" for="<%= txtSearch.ClientID %>">Tim kiem</label>
-                        <asp:TextBox ID="txtSearch" runat="server" CssClass="portal-input" Placeholder="Nhap ten sinh vien hoac lop hoc"></asp:TextBox>
+                        <label class="portal-label" for="<%= txtSearch.ClientID %>">Tìm kiếm</label>
+                        <asp:TextBox ID="txtSearch" runat="server" CssClass="portal-input" Placeholder="Nhập tên sinh viên hoặc lop hoc"></asp:TextBox>
                     </div>
                     <div class="portal-actions" style="align-items:end;">
-                        <asp:Button ID="btnSearch" runat="server" Text="Tim kiem" CssClass="portal-btn primary" OnClick="btnSearch_Click" />
+                        <asp:Button ID="btnSearch" runat="server" Text="Tìm kiếm" CssClass="portal-btn primary" OnClick="btnSearch_Click" />
                     </div>
                     <div class="portal-actions" style="align-items:end; justify-content:flex-end;">
-                        <asp:Button ID="btnAdd" runat="server" Text="Them sinh vien" CssClass="portal-btn success" OnClick="btnAdd_Click" />
+                        <asp:Button ID="btnAdd" runat="server" Text="Thêm sinh viên" CssClass="portal-btn success" OnClick="btnAdd_Click" />
                     </div>
                 </div>
             </div>
@@ -43,18 +43,18 @@
                     <Columns>
                         <asp:BoundField DataField="Id" HeaderText="ID" ReadOnly="true" />
                         <asp:BoundField DataField="Name" HeaderText="Ho ten" />
-                        <asp:BoundField DataField="ClassName" HeaderText="Lop hoc" />
+                        <asp:BoundField DataField="ClassName" HeaderText="Lớp học" />
                         <asp:BoundField DataField="Email" HeaderText="Email" />
                         <asp:TemplateField HeaderText="Thao tac">
                             <ItemTemplate>
-                                <asp:Button ID="btnEdit" runat="server" Text="Sua"
+                                <asp:Button ID="btnEdit" runat="server" Text="Sửa"
                                     CssClass="portal-btn-sm warning"
                                     CommandName="EditStudent" CommandArgument='<%# Eval("Id") %>' />
 
-                                <asp:Button ID="btnDelete" runat="server" Text="Xoa"
+                                <asp:Button ID="btnDelete" runat="server" Text="Xóa"
                                     CssClass="portal-btn-sm danger"
                                     CommandName="DeleteStudent" CommandArgument='<%# Eval("Id") %>'
-                                    OnClientClick="return confirm('Ban co chac chan muon xoa sinh vien nay khong?');" />
+                                    OnClientClick="return confirm('Bạn có chắc chắn muốn xoa sinh viên này không?');" />
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
@@ -62,9 +62,20 @@
             </div>
 
             <div class="portal-footer-actions">
-                <asp:Button ID="btnBack" runat="server" Text="Quay lai Admin" CssClass="portal-btn secondary" OnClick="btnBack_Click" />
+                <asp:Button ID="btnBack" runat="server" Text="Quay lại Admin" CssClass="portal-btn secondary" OnClick="btnBack_Click" />
             </div>
         </div>
     </form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

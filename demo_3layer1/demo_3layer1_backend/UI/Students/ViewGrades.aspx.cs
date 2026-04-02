@@ -34,7 +34,7 @@ namespace demo_3layer1.UI.Students
             int studentId = GetCurrentStudentId();
             if (studentId <= 0)
             {
-                lblStudentName.Text = "Tai khoan chua lien ket ho so sinh vien.";
+                lblStudentName.Text = "Tài khoản chưa liên kết hồ sơ sinh viên.";
                 gvGrades.DataSource = Enumerable.Empty<object>();
                 gvGrades.DataBind();
                 return;
@@ -71,3 +71,4 @@ namespace demo_3layer1.UI.Students
         }
     }
 }
+

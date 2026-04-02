@@ -1,4 +1,4 @@
-using demo_3layer1.Business;
+﻿using demo_3layer1.Business;
 using demo_3layer1.DataAccess;
 using demo_3layer1.Security;
 using System;
@@ -50,7 +50,7 @@ namespace demo_3layer1.UI.Grades
                 if (ddlStudent.Items.Count == 0 || ddlSubject.Items.Count == 0)
                 {
                     lblMessage.ForeColor = System.Drawing.Color.Red;
-                    lblMessage.Text = "Chua co du lieu sinh vien hoac mon hoc de nhap diem.";
+                    lblMessage.Text = "Chưa có dữ liệu sinh viên hoặc môn học để nhập điểm.";
                     return;
                 }
 
@@ -59,21 +59,21 @@ namespace demo_3layer1.UI.Grades
                 if (!int.TryParse(ddlStudent.SelectedValue, out studentId) || !int.TryParse(ddlSubject.SelectedValue, out subjectId))
                 {
                     lblMessage.ForeColor = System.Drawing.Color.Red;
-                    lblMessage.Text = "Du lieu sinh vien/mon hoc khong hop le.";
+                    lblMessage.Text = "Dữ liệu sinh viên/môn học không hợp lệ.";
                     return;
                 }
 
-                // Chuẩn hóa dấu thập phân
+                // Chuáº©n hÃ³a dáº¥u tháº­p phÃ¢n
                 string scoreText = txtScore.Text.Trim();
-                scoreText = scoreText.Replace(',', '.'); // cho phép 7,5 hoặc 7.5
+                scoreText = scoreText.Replace(',', '.'); // cho phÃ©p 7,5 hoáº·c 7.5
 
                 double score = double.Parse(scoreText, CultureInfo.InvariantCulture);
 
                 string message = _gradeBus.SaveGrade(studentId, subjectId, score);
 
-                if (message.Contains("thành công"))
+                if (message.Contains("thÃ nh cÃ´ng"))
                 {
-                    Response.Redirect("GradeList.aspx"); // quay về bảng điểm
+                    Response.Redirect("GradeList.aspx"); // quay vá» báº£ng Ä‘iá»ƒm
                 }
                 else
                 {
@@ -84,12 +84,12 @@ namespace demo_3layer1.UI.Grades
             catch (FormatException)
             {
                 lblMessage.ForeColor = System.Drawing.Color.Red;
-                lblMessage.Text = "❌ Điểm không hợp lệ. Vui lòng nhập số từ 0 đến 10 (vd: 7,5 hoặc 7.5).";
+                lblMessage.Text = "âŒ Äiá»ƒm khÃ´ng há»£p lá»‡. Vui lÃ²ng nháº­p sá»‘ tá»« 0 Ä‘áº¿n 10 (vd: 7,5 hoáº·c 7.5).";
             }
             catch (Exception ex)
             {
                 lblMessage.ForeColor = System.Drawing.Color.Red;
-                lblMessage.Text = "❌ Lỗi: " + ex.Message;
+                lblMessage.Text = "âŒ Lá»—i: " + ex.Message;
             }
         }
 
@@ -99,3 +99,6 @@ namespace demo_3layer1.UI.Grades
         }
     }
 }
+
+
+

@@ -1,2 +1,10 @@
-http://localhost:44384/UI/Home/Home
-"C:\Program Files\IIS Express\iisexpress.exe" /path:"C:\Users\Admin\Downloads\demo_3layer1\demo_3layer1\demo_3layer1" /port:44384
+HƯỚNG DẪN NHANH - FRONTEND
+
+1) Chạy frontend (Student):
+Start-Process -FilePath "C:\Program Files\IIS Express\iisexpress.exe" -ArgumentList '/path:"C:\Users\Admin\Downloads\demo_3layer1\demo_3layer1\demo_3layer1_frontend" /port:18082'
+
+2) Mở trang đăng nhập:
+http://localhost:18082/UI/Login/Login
+
+3) Dừng IIS Express:
+Stop-Process -Name iisexpress -Force

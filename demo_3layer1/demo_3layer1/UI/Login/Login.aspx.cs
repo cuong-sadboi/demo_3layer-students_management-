@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using demo_3layer1.Business;
 using demo_3layer1.Security;
 
@@ -14,24 +14,24 @@ namespace demo_3layer1.UI.Loginn
         {
             if (!IsPostBack)
             {
-                // ✅ Xóa session cũ nếu không đến từ Home
+                // âœ… XÃ³a session cÅ© náº¿u khÃ´ng Ä‘áº¿n tá»« Home
                 if (Session["CameFromHome"] == null)
                 {
                     ClearAuthSession();
                 }
                 else
                 {
-                    // Bắt đầu phiên đăng nhập mới từ Home thì reset bộ đếm lỗi
+                    // Báº¯t Ä‘áº§u phiÃªn Ä‘Äƒng nháº­p má»›i tá»« Home thÃ¬ reset bá»™ Ä‘áº¿m lá»—i
                     ResetFailedAttemptState();
                 }
 
-                // ✅ Nếu có vai trò được chọn từ Home.aspx
+                // âœ… Náº¿u cÃ³ vai trÃ² Ä‘Æ°á»£c chá»n tá»« Home.aspx
               
 
-                // ✅ Đảm bảo có tài khoản mặc định
+                // âœ… Äáº£m báº£o cÃ³ tÃ i khoáº£n máº·c Ä‘á»‹nh
                 _userBusiness.SeedDefaultUsers();
 
-                // Xóa flag để không ảnh hưởng lần sau
+                // XÃ³a flag Ä‘á»ƒ khÃ´ng áº£nh hÆ°á»Ÿng láº§n sau
                 Session["CameFromHome"] = null;
             }
 
@@ -58,7 +58,7 @@ namespace demo_3layer1.UI.Loginn
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                lblMessage.Text = "Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu!";
+                lblMessage.Text = "Vui lÃ²ng nháº­p Ä‘áº§y Ä‘á»§ tÃªn Ä‘Äƒng nháº­p vÃ  máº­t kháº©u!";
                 return;
             }
 
@@ -73,24 +73,24 @@ namespace demo_3layer1.UI.Loginn
             if (!string.IsNullOrEmpty(selectedRole) &&
                 !string.Equals(selectedRole, user.Role, StringComparison.OrdinalIgnoreCase))
             {
-                // Không chặn cứng đăng nhập, chỉ thông báo để UX mềm hơn.
-                lblMessage.Text = "Vai tro da chon khong trung voi tai khoan. He thong se dang nhap theo vai tro cua tai khoan.";
+                // KhÃ´ng cháº·n cá»©ng Ä‘Äƒng nháº­p, chá»‰ thÃ´ng bÃ¡o Ä‘á»ƒ UX má»m hÆ¡n.
+                lblMessage.Text = "Vai trò đã chọn không trùng với tài khoản. Hệ thống sẽ đăng nhập theo vai trò của tài khoản.";
             }
 
             ResetFailedAttemptState();
 
-            // ✅ Lưu thông tin đăng nhập vào session
+            // âœ… LÆ°u thÃ´ng tin Ä‘Äƒng nháº­p vÃ o session
             Session["Username"] = user.Username;
             Session["Role"] = user.Role;
             Session["UserId"] = user.Id;
             Session["SelectedRole"] = null;
             
-            // QUAN TRỌNG: nhớ lưu luôn UserId
+            // QUAN TRá»ŒNG: nhá»› lÆ°u luÃ´n UserId
 
-            // ✅ Nếu là sinh viên → tìm đúng Student theo UserId
+            // âœ… Náº¿u lÃ  sinh viÃªn â†’ tÃ¬m Ä‘Ãºng Student theo UserId
             if (string.Equals(user.Role, "Student", StringComparison.OrdinalIgnoreCase))
             {
-                var stu = new StudentBusiness().GetByUserId(user.Id); // cần hàm này
+                var stu = new StudentBusiness().GetByUserId(user.Id); // cáº§n hÃ m nÃ y
                 
                 if (stu != null)
                 {
@@ -99,14 +99,14 @@ namespace demo_3layer1.UI.Loginn
                 }
                 else
                 {
-                    // Chưa liên kết hồ sơ: không cho vào dashboard để tránh lỗi logic dữ liệu
+                    // ChÆ°a liÃªn káº¿t há»“ sÆ¡: khÃ´ng cho vÃ o dashboard Ä‘á»ƒ trÃ¡nh lá»—i logic dá»¯ liá»‡u
                     ClearAuthSession();
-                    lblMessage.Text = "Tài khoản chưa liên kết hồ sơ sinh viên. Vui lòng liên hệ quản trị viên.";
+                    lblMessage.Text = "TÃ i khoáº£n chÆ°a liÃªn káº¿t há»“ sÆ¡ sinh viÃªn. Vui lÃ²ng liÃªn há»‡ quáº£n trá»‹ viÃªn.";
                     return;
                 }
             }
 
-            // ✅ Điều hướng theo role
+            // âœ… Äiá»u hÆ°á»›ng theo role
             var normalizedRole = (user.Role ?? string.Empty).Trim();
             switch (normalizedRole.ToLowerInvariant())
             {
@@ -121,7 +121,7 @@ namespace demo_3layer1.UI.Loginn
                     break;
                 default:
                     ClearAuthSession();
-                    lblMessage.Text = "Vai trò không hợp lệ.";
+                    lblMessage.Text = "Vai trÃ² khÃ´ng há»£p lá»‡.";
                     break;
             }
         }
@@ -174,7 +174,7 @@ namespace demo_3layer1.UI.Loginn
 
             Session["LoginFailedCount"] = failedAttempts;
             int remainingAttempts = MaxFailedAttempts - failedAttempts;
-            lblMessage.Text = $"Sai tên đăng nhập hoặc mật khẩu. Còn {remainingAttempts} lần thử.";
+            lblMessage.Text = $"Sai tÃªn Ä‘Äƒng nháº­p hoáº·c máº­t kháº©u. CÃ²n {remainingAttempts} láº§n thá»­.";
         }
 
         private void ResetFailedAttemptState()
@@ -186,7 +186,7 @@ namespace demo_3layer1.UI.Loginn
         private void ShowLockMessage(TimeSpan remaining)
         {
             int waitSeconds = Math.Max(1, (int)Math.Ceiling(remaining.TotalSeconds));
-            lblMessage.Text = $"Bạn đã nhập sai quá nhiều lần. Vui lòng thử lại sau {waitSeconds} giây.";
+            lblMessage.Text = $"Báº¡n Ä‘Ã£ nháº­p sai quÃ¡ nhiá»u láº§n. Vui lÃ²ng thá»­ láº¡i sau {waitSeconds} giÃ¢y.";
         }
 
         private void UpdateLoginLockUi()
@@ -198,11 +198,11 @@ namespace demo_3layer1.UI.Loginn
             if (isLocked)
             {
                 int waitSeconds = Math.Max(1, (int)Math.Ceiling(remaining.TotalSeconds));
-                btnLogin.Text = $"Tạm khóa ({waitSeconds}s)";
+                btnLogin.Text = $"Táº¡m khÃ³a ({waitSeconds}s)";
             }
             else
             {
-                btnLogin.Text = "Đăng nhập";
+                btnLogin.Text = "ÄÄƒng nháº­p";
             }
         }
 
@@ -217,3 +217,5 @@ namespace demo_3layer1.UI.Loginn
         }
     }
 }
+
+

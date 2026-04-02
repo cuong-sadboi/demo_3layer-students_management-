@@ -329,41 +329,41 @@
             <div class="login-shell">
                 <section class="hero-pane">
                     <span class="hero-badge">Student Portal</span>
-                    <h2 class="hero-title">Dang nhap de tiep tuc hoc tap va quan ly du lieu.</h2>
-                    <p class="hero-subtitle">He thong duoc toi uu cho Admin, Giao vien va Sinh vien voi quyen truy cap rieng biet.</p>
+                    <h2 class="hero-title">Đăng nhập để tiếp tục học tập và quản lý dữ liệu.</h2>
+                    <p class="hero-subtitle">Hệ thống được tối ưu cho Admin, Giáo viên và Sinh viên với quyền truy cập riêng biệt.</p>
                     <ul class="hero-list">
-                        <li>Quan ly danh sach sinh vien, mon hoc, diem so</li>
-                        <li>Tra cuu ket qua theo tung tai khoan</li>
-                        <li>Xu ly nhanh tren desktop va mobile</li>
+                        <li>Quản lý danh sách sinh viên, môn học, điểm số</li>
+                        <li>Tra cứu kết quả theo từng tài khoản</li>
+                        <li>Xử lý nhanh trên desktop và mobile</li>
                     </ul>
                 </section>
 
                 <section class="form-pane">
-                    <h1 class="form-title">Dang nhap he thong</h1>
-                    <p class="form-caption">Nhap thong tin tai khoan de vao dung dashboard theo vai tro.</p>
+                    <h1 class="form-title">Đăng nhập hệ thống</h1>
+                    <p class="form-caption">Nhập thông tin tài khoản để vào đúng dashboard theo vai trò.</p>
 
                     <div class="role-pill <%= string.IsNullOrEmpty(selectedRole) ? "is-hidden" : string.Empty %>">
-                        Vai tro da chon: <strong><%= Server.HtmlEncode(selectedRole) %></strong>
+                        Vai trò đã chọn: <strong><%= Server.HtmlEncode(selectedRole) %></strong>
                     </div>
 
                     <div class="group">
-                        <label class="field-label" for="<%= txtUsername.ClientID %>">Ten dang nhap</label>
-                        <asp:TextBox ID="txtUsername" runat="server" CssClass="form-input" Placeholder="Nhap ten dang nhap"></asp:TextBox>
+                        <label class="field-label" for="<%= txtUsername.ClientID %>">Tên đăng nhập</label>
+                        <asp:TextBox ID="txtUsername" runat="server" CssClass="form-input" Placeholder="Nhập tên đăng nhập"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvUsername" runat="server"
                             ControlToValidate="txtUsername"
-                            ErrorMessage="Ten dang nhap khong duoc de trong."
+                            ErrorMessage="Tên đăng nhập không được để trống."
                             CssClass="validator" Display="Dynamic" />
                     </div>
 
                     <div class="group">
-                        <label class="field-label" for="<%= txtPassword.ClientID %>">Mat khau</label>
+                        <label class="field-label" for="<%= txtPassword.ClientID %>">Mật khẩu</label>
                         <div class="password-wrap">
-                            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-input" TextMode="Password" Placeholder="Nhap mat khau"></asp:TextBox>
-                            <button id="btnTogglePassword" type="button" class="toggle-pass">Hien</button>
+                            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-input" TextMode="Password" Placeholder="Nhập mật khẩu"></asp:TextBox>
+                            <button id="btnTogglePassword" type="button" class="toggle-pass">Hiện</button>
                         </div>
                         <asp:RequiredFieldValidator ID="rfvPassword" runat="server"
                             ControlToValidate="txtPassword"
-                            ErrorMessage="Mat khau khong duoc de trong."
+                            ErrorMessage="Mật khẩu không được để trống."
                             CssClass="validator" Display="Dynamic" />
                     </div>
 
@@ -372,11 +372,11 @@
                     <asp:Button ID="btnLogin" runat="server" Text="Đăng nhập"
                         CssClass="btn-login"
                         OnClick="btnLogin_Click"
-                        OnClientClick="if (typeof(Page_ClientValidate)==='function' && !Page_ClientValidate()) { return false; } var btn=this; window.setTimeout(function(){ btn.disabled=true; btn.value='Dang xu ly...'; }, 0); return true;" />
+                        OnClientClick="if (typeof(Page_ClientValidate)==='function' && !Page_ClientValidate()) { return false; } var btn=this; window.setTimeout(function(){ btn.disabled=true; btn.value='Đang xử lý...'; }, 0); return true;" />
 
                     <div class="helper-row">
-                        <span>Ban quen mat khau? Lien he quan tri vien.</span>
-                        <a class="back-link" href="../Home/Home.aspx">Quay lai Home</a>
+                        <span>Bạn quên mật khẩu? Liên hệ quản trị viên.</span>
+                        <a class="back-link" href="../Home/Home.aspx">Quay lại Home</a>
                     </div>
                 </section>
             </div>
@@ -395,9 +395,39 @@
             toggleBtn.addEventListener('click', function () {
                 var showing = passInput.type === 'text';
                 passInput.type = showing ? 'password' : 'text';
-                toggleBtn.textContent = showing ? 'Hien' : 'An';
+                toggleBtn.textContent = showing ? 'Hiện' : 'An';
             });
         })();
     </script>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

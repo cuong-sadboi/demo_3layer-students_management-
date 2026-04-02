@@ -17,7 +17,7 @@
             <div class="portal-topbar">
                 <div>
                     <h1 class="portal-title">Course Registration</h1>
-                    <p class="portal-subtitle">Dang ky hoc phan theo hoc ky, theo doi danh sach mon da chon va huy dang ky khi can.</p>
+                    <p class="portal-subtitle">Đăng ký học phần theo học kỳ, theo dõi danh sách môn đã chọn và hủy đăng ký khi cần.</p>
                 </div>
                 <span class="portal-badge">Student</span>
             </div>
@@ -27,36 +27,36 @@
             <div class="portal-toolbar">
                 <div class="portal-row cols-3">
                     <div>
-                        <label class="portal-label" for="<%= ddlSubjects.ClientID %>">Mon hoc</label>
+                        <label class="portal-label" for="<%= ddlSubjects.ClientID %>">Môn học</label>
                         <asp:DropDownList ID="ddlSubjects" runat="server" CssClass="portal-select" AppendDataBoundItems="true">
-                            <asp:ListItem Text="-- Chon mon hoc --" Value="" />
+                            <asp:ListItem Text="-- Chọn môn học --" Value="" />
                         </asp:DropDownList>
                     </div>
 
                     <div>
-                        <label class="portal-label" for="<%= txtSemester.ClientID %>">Hoc ky</label>
+                        <label class="portal-label" for="<%= txtSemester.ClientID %>">Học kỳ</label>
                         <asp:TextBox ID="txtSemester" runat="server" CssClass="portal-input" placeholder="VD: 2026A"></asp:TextBox>
                     </div>
 
                     <div class="portal-actions" style="align-items:end;">
-                        <asp:Button ID="btnRegister" runat="server" Text="Dang ky mon" CssClass="portal-btn success" OnClick="btnRegister_Click" />
+                        <asp:Button ID="btnRegister" runat="server" Text="Đăng ký môn" CssClass="portal-btn success" OnClick="btnRegister_Click" />
                     </div>
                 </div>
             </div>
 
             <div class="portal-table-wrap">
                 <asp:GridView ID="gvRegistrations" runat="server" CssClass="portal-table"
-                    AutoGenerateColumns="False" DataKeyNames="Id" OnRowCommand="gvRegistrations_RowCommand" EmptyDataText="Ban chua dang ky mon hoc nao.">
+                    AutoGenerateColumns="False" DataKeyNames="Id" OnRowCommand="gvRegistrations_RowCommand" EmptyDataText="Bạn chưa đăng ký môn học nào.">
                     <Columns>
                         <asp:BoundField DataField="Id" HeaderText="Ma" />
-                        <asp:BoundField DataField="Subject.Name" HeaderText="Mon hoc" />
-                        <asp:BoundField DataField="Semester" HeaderText="Hoc ky" />
+                        <asp:BoundField DataField="Subject.Name" HeaderText="Môn học" />
+                        <asp:BoundField DataField="Semester" HeaderText="Học kỳ" />
                         <asp:TemplateField HeaderText="Thao tac">
                             <ItemTemplate>
-                                <asp:Button ID="btnDelete" runat="server" Text="Huy"
+                                <asp:Button ID="btnDelete" runat="server" Text="Hủy"
                                     CssClass="portal-btn-sm danger"
                                     CommandName="DeleteRegistration" CommandArgument='<%# Eval("Id") %>'
-                                    OnClientClick="return confirm('Ban co chac chan muon huy dang ky mon hoc nay khong?');" />
+                                    OnClientClick="return confirm('Bạn có chắc chắn muốn hủy đăng ký môn học này không?');" />
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
@@ -64,9 +64,26 @@
             </div>
 
             <div class="portal-footer-actions">
-                <asp:Button ID="btnBack" runat="server" Text="Quay lai dashboard" CssClass="portal-btn secondary" OnClick="btnBack_Click" />
+                <asp:Button ID="btnBack" runat="server" Text="Quay lại dashboard" CssClass="portal-btn secondary" OnClick="btnBack_Click" />
             </div>
         </div>
     </form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

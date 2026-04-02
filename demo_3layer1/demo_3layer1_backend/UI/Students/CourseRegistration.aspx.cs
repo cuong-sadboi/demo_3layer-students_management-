@@ -46,7 +46,7 @@ namespace demo_3layer1.UI.Students
             if (studentId <= 0)
             {
                 lblMessage.CssClass = "portal-message error";
-                lblMessage.Text = "Tai khoan chua lien ket ho so sinh vien.";
+                lblMessage.Text = "Tài khoản chưa liên kết hồ sơ sinh viên.";
                 gvRegistrations.DataSource = Enumerable.Empty<object>();
                 gvRegistrations.DataBind();
                 return;
@@ -73,7 +73,7 @@ namespace demo_3layer1.UI.Students
             if (ddlSubjects.Items.Count == 0)
             {
                 lblMessage.CssClass = "portal-message warn";
-                lblMessage.Text = "Chua co mon hoc de dang ky.";
+                lblMessage.Text = "Chưa có môn học để đăng ký.";
                 return;
             }
 
@@ -81,7 +81,7 @@ namespace demo_3layer1.UI.Students
             if (!int.TryParse(ddlSubjects.SelectedValue, out subjectId))
             {
                 lblMessage.CssClass = "portal-message error";
-                lblMessage.Text = "Mon hoc khong hop le.";
+                lblMessage.Text = "Môn học không hợp lệ.";
                 return;
             }
 
@@ -131,3 +131,6 @@ namespace demo_3layer1.UI.Students
         }
     }
 }
+
+
+

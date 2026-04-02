@@ -17,7 +17,7 @@
             <div class="portal-topbar">
                 <div>
                     <h1 class="portal-title">Academic Results</h1>
-                    <p class="portal-subtitle">Theo doi ket qua hoc tap theo tung mon va cap nhat nhanh cac diem so moi nhat.</p>
+                    <p class="portal-subtitle">Theo dõi kết quả học tập theo từng môn và cập nhật nhanh các điểm số mới nhất.</p>
                 </div>
                 <span class="portal-badge">Student</span>
             </div>
@@ -27,18 +27,31 @@
 
             <div class="portal-table-wrap">
                 <asp:GridView ID="gvGrades" runat="server" CssClass="portal-table"
-                    AutoGenerateColumns="False" EmptyDataText="Chua co diem duoc ghi nhan.">
+                    AutoGenerateColumns="False" EmptyDataText="Chua co điểm được ghi nhan.">
                     <Columns>
-                        <asp:BoundField DataField="Subject.Name" HeaderText="Mon hoc" />
-                        <asp:BoundField DataField="Score" HeaderText="Diem" />
+                        <asp:BoundField DataField="Subject.Name" HeaderText="Môn học" />
+                        <asp:BoundField DataField="Score" HeaderText="Điểm" />
                     </Columns>
                 </asp:GridView>
             </div>
 
             <div class="portal-footer-actions">
-                <asp:Button ID="btnBack" runat="server" Text="Quay lai dashboard" CssClass="portal-btn secondary" OnClick="btnBack_Click" />
+                <asp:Button ID="btnBack" runat="server" Text="Quay lại dashboard" CssClass="portal-btn secondary" OnClick="btnBack_Click" />
             </div>
         </div>
     </form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

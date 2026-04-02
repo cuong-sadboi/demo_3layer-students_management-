@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>He thong Quan ly Sinh vien</title>
+    <title>Hệ thống Quản lý Sinh viên</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -240,37 +240,37 @@
                 <img src="img/banner.jpg" alt="Banner" />
                 <div class="hero-overlay">
                     <span class="hero-tag">Student Management Suite</span>
-                    <h1 class="hero-title">Nen tang quan ly hoc vu thong minh.</h1>
-                    <p class="hero-subtitle">Quan ly sinh vien, mon hoc, diem so va dang ky hoc phan tren cung mot he thong, su dung de dang tren moi thiet bi.</p>
+                    <h1 class="hero-title">Nền tảng quản lý học vụ thông minh.</h1>
+                    <p class="hero-subtitle">Quản lý sinh viên, môn học, điểm số và đăng ký học phần trên cùng một hệ thống, sử dụng dễ dàng trên mọi thiết bị.</p>
 
                     <div class="hero-actions">
-                        <a href="../Login/Login.aspx" class="quick-link">Dang nhap nhanh</a>
+                        <a href="../Login/Login.aspx" class="quick-link">Đăng nhập nhanh</a>
                     </div>
                 </div>
             </section>
 
-            <h2 class="section-title">Chon vai tro de bat dau</h2>
-            <p class="section-subtitle">Moi vai tro se duoc dieu huong den dashboard va quyen truy cap phu hop.</p>
+            <h2 class="section-title">Chọn vai trò để bắt đầu</h2>
+            <p class="section-subtitle">Mỗi vai trò sẽ được điều hướng đến dashboard và quyền truy cập phù hợp.</p>
 
             <div class="role-grid">
                 <article class="role-card">
                     <span class="role-pill">ADMIN</span>
                     <h5>Quan tri vien</h5>
-                    <p>Quan ly toan bo tai nguyen he thong, bao gom sinh vien, mon hoc va ket qua hoc tap.</p>
+                    <p>Quản lý toàn bộ tài nguyên hệ thống, bao gồm sinh viên, môn học và kết quả học tập.</p>
                     <asp:Button ID="btnAdmin" runat="server" Text="Vao voi quyen Admin" CssClass="role-btn admin-btn" OnClick="btnAdmin_Click" />
                 </article>
 
                 <article class="role-card">
                     <span class="role-pill">TEACHER</span>
-                    <h5>Giang vien</h5>
-                    <p>Theo doi hoc phan phu trach, cap nhat diem va tra cuu thong tin hoc tap theo lop.</p>
+                    <h5>Giảng viên</h5>
+                    <p>Theo dõi học phần phu trach, cập nhật điểm và tra cứu thông tin học tập theo lớp.</p>
                     <asp:Button ID="btnTeacher" runat="server" Text="Vao voi quyen Teacher" CssClass="role-btn teacher-btn" OnClick="btnTeacher_Click" />
                 </article>
 
                 <article class="role-card">
                     <span class="role-pill">STUDENT</span>
-                    <h5>Sinh vien</h5>
-                    <p>Dang ky mon hoc, xem bang diem va quan ly lo trinh hoc tap ca nhan tren mot giao dien gon gang.</p>
+                    <h5>Sinh viên</h5>
+                    <p>Đăng ký môn học, xem bảng điểm và quản lý lộ trình học tập cá nhân trên một giao diện gọn gàng.</p>
                     <asp:Button ID="btnStudent" runat="server" Text="Vao voi quyen Student" CssClass="role-btn student-btn" OnClick="btnStudent_Click" />
                 </article>
             </div>
@@ -278,3 +278,38 @@
     </form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
